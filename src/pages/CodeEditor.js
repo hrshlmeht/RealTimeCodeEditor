@@ -4,7 +4,8 @@ import Editor from '../components/Editor';
 
 const CodeEditor = () => {
   const [clients, setclients] = useState([{socketId:1 , username :"Harshal Mehta"},
-                                          {socketId:2 , username :"Meet Shukla"}
+                                          {socketId:2 , username :"Meet Shukla"},
+                                          {socketId:3 , username :"Meet Shukla"}
                                         ]);
 
   return (
