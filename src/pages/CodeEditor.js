@@ -31,13 +31,12 @@ const CodeEditor = () => {
         toast.error('Socket connection failed, try again later.');
         reactNavigator('/');
     }
-
       socketRef.current.emit(ACTIONS.JOIN, 
         {
         roomId, 
-        username: location.state?.userName, 
+        username: location.state?.username, 
       })
-
+      console.log(socketRef)
       socketRef.current.on(
         ACTIONS.JOINED,
         ({ clients, username, socketId }) => {
