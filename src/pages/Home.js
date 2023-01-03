@@ -70,7 +70,7 @@ const Home = () => {
                             href=""
                             className="createNewBtn"
                         >
-                            new room
+                            New Room
                         </a>
                     </span>
                 </div>

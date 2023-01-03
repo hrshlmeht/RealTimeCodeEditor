@@ -47,9 +47,27 @@ const CodeEditor = () => {
             setClients(clients);
         }
     );
-    } 
+      //listening for disconnect
+      socketRef.current.on(
+        ACTIONS.DISCONNECTED,
+        ({ socketId, username }) => {
+            toast.success(`${username} left the room.`);
+            setClients((prev) => {
+                return prev.filter(
+                    (client) => client.socketId !== socketId
+                );
+            });
+        });
+  }; 
     init();
-  },[])
+
+    return () => {
+      socketRef.current.disconnect();
+      socketRef.current.off(ACTIONS.JOINED)
+      socketRef.current.off(ACTIONS.DISCONNECTED)
+
+    };
+  },[]);
 
 
   
