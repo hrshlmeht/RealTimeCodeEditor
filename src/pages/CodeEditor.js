@@ -76,9 +76,9 @@ const EditorPage = () => {
     async function copyRoomId() {
         try {
             await navigator.clipboard.writeText(roomId);
-            toast.success('Room ID has been copied to your clipboard');
+            toast.success('Room ID copied');
         } catch (err) {
-            toast.error('Could not copy the Room ID');
+            toast.error('Due to some errors could not copy the Room ID');
             console.error(err);
         }
     }
@@ -102,7 +102,7 @@ const EditorPage = () => {
                             alt="logo"
                         />
                     </div>
-                    <h3>Connected</h3>
+                    <h3>Connected Peeps</h3>
                     <div className="clientsList">
                         {clients.map((client) => (
                             <Client
@@ -113,7 +113,7 @@ const EditorPage = () => {
                     </div>
                 </div>
                 <button className="btn copyBtn" onClick={copyRoomId}>
-                    Copy ROOM ID
+                    Copy Room Id
                 </button>
                 <button className="btn leaveBtn" onClick={leaveRoom}>
                     Leave
